@@ -1,0 +1,25 @@
+{
+  "name": "courseworkmarketplace",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/DanKarm/courseworkMarketplace#readme",
+  "bugs": {
+    "url": "https://github.com/DanKarm/courseworkMarketplace/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanKarm/courseworkMarketplace.git"
+  },
+  "license": "ISC",
+  "author": "Daniil",
+  "type": "module",
+  "main": "index.js",
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+  "devDependencies": {
+    "vite": "^7.2.4"
+  }
+}
