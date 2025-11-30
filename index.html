@@ -3,11 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/style.scss">
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">Hello</div>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <form class="header-form" >
+            <span class="Logo">WB</span>
+            <input type="search">
+            <button type="button">cart</button>
+          </form>
+        </div>
+      </header>
+      <main class="main">
+        <section class="slider">
+          <div class="container"></div>
+        </section>
+        <section class="goodes-cards">
+          <div class="container">
+            <ul class="cards-list">
+              <li class="cards-item">
+                <div class="cards-main">
+                  <div class="cards-img">
+                    <img src="./src/img/bag.jpg" alt="#">
+                  </div>
+                  <form  class="cards-main-form">
+                    <span class="discount">10%</span>
+                    <button type="submit" class="submit-button">Add</button>
+                  </form>
+                </div>
+                <div class="cards-bottom">
+                  <div class="cards-bottom-left">
+                    <span class="price-with-discount">1000</span>
+                    <span class="name-of-goods">Shoping bug</span>
+                  </div>
+                  <div class="cards-bottom-right">
+                     <span class="price">1000</span>
+                  </div>
+                </div>
+              </li>
+              <li class="cards-item">
+                <div class="cards-main">
+                  <div class="cards-img">
+                    <img src="./src/img/shoes.jpg" alt="#">
+                  </div>
+                  <form  class="cards-main-form">
+                    <span class="discount">10%</span>
+                    <button type="submit" class="submit-button">Add</button>
+                  </form>
+                </div>
+                <div class="cards-bottom">
+                  <div class="cards-bottom-left">
+                    <span class="price-with-discount">1000</span>
+                    <span class="name-of-goods">Shoping bug</span>
+                  </div>
+                  <div class="cards-bottom-right">
+                     <span class="price">1000</span>
+                  </div>
+                </div>
+              </li>
+              <li class="cards-item">
+                <div class="cards-main">
+                  <div class="cards-img">
+                    <img src="#" alt="#">
+                  </div>
+                  <div class="cards-main-form">
+                    <span class="discount">10%</span>
+                    <button class="submit">Add</button>
+                  </div>
+                </div>
+                <div class="cards-bottom">
+                  <div class="cards-bottom-left">
+                    <span class="price-with-discount">1000</span>
+                    <span class="name-of-goods">Shoping bug</span>
+                  </div>
+                  <div class="cards-bottom-right">
+                     <span class="price">1000</span>
+                  </div>
+                </div>
+              </li>
+              <li class="cards-item">
+                <div class="cards-main">
+                  <div class="cards-img">
+                    <img src="#" alt="#">
+                  </div>
+                  <div class="cards-main-form">
+                    <span class="discount">10%</span>
+                    <button class="submit">Add</button>
+                  </div>
+                </div>
+                <div class="cards-bottom">
+                  <div class="cards-bottom-left">
+                    <span class="price-with-discount">1000</span>
+                    <span class="name-of-goods">Shoping bug</span>
+                  </div>
+                  <div class="cards-bottom-right">
+                     <span class="price">1000</span>
+                  </div>
+                </div>
+              </li>
+              
+            </ul>
+        </div>
+        </section>
+      </main>
+    </div>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
