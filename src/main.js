@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Slider } from "./components/Slider";
 import { GoodsSection } from "./components/GoodsSection";
 import { CartSection } from "./components/CartSection";
+import { initSlider } from "./slider";
 
 const APP = document.getElementById("app")
 
@@ -26,3 +27,4 @@ fragment.append(
 
 
 APP.append(fragment);
+initSlider();

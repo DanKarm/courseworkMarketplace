@@ -2,6 +2,7 @@ import { Element } from "../lib/Element";
 import { Component } from "../lib/Component";
 import { getGoodsById } from "../api/mockApi";
 import { Goods } from "../components/Goods";
+import { citiesStore } from "../state/cartStore";
 
 export class Cart extends Component{
     constructor(props){
@@ -53,6 +54,11 @@ export class Cart extends Component{
 
     mount() {
         this.element = this.render();
+        citiesStore.subscribe(() => {
+        if (this.element) {
+            this.rerender();
+        }
+        });
 
         this.loadGoods();
         return this.element;

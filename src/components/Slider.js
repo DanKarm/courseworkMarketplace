@@ -16,9 +16,63 @@ export class Slider extends Component{
             new Element(
                 "div",
                 {
-                    id:"container",
-                    class: "container",
+                    id:"slider",
+                    class: "slider",
                 },
+                new Element(
+                    "div",
+                    {
+                        class:"img-wrapper"
+                    },
+                    new Element(
+                        "img",
+                        {
+
+                        }
+                    ),
+                    new Element(
+                        "span",
+                        {
+                            textContent:"hello"
+                        }
+                    )
+                ),
+                new Element(
+                    "div",
+                    {
+                        class:"img-wrapper"
+                    },
+                    new Element(
+                        "img",
+                        {
+
+                        }
+                    ),
+                     new Element(
+                        "span",
+                        {
+                            textContent:"hello"
+                        }
+                    )
+                ),
+                new Element(
+                    "div",
+                    {
+                        class:"img-wrapper"
+                    },
+                    new Element(
+                        "img",
+                        {
+
+                        }
+                    ),
+                    new Element(
+                        "span",
+                        {
+                            textContent:"hello"
+                        }
+                    )
+                )
             )
         )
         return slider;

@@ -1,5 +1,7 @@
 import { Element } from "../lib/Element";
 import { Component } from "../lib/Component";
+import { citiesStore } from "../state/cartStore";
+import { addToCart } from "../state/cartStore";
 
 export class Goods extends Component{
     constructor(props){
@@ -7,7 +9,7 @@ export class Goods extends Component{
         this.value = 0;
         this.value = localStorage.getItem(this.props.id);
         this.addToCart = this.addToCart.bind(this);
-
+        
         
     }
 
@@ -21,18 +23,18 @@ export class Goods extends Component{
         return Number(discountedPrice.toFixed(2));
     }
     addToCart(){
-    const { id } = this.props;
+        const { id } = this.props;
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+        let cart = JSON.parse(localStorage.getItem("cart")) || {};
+        citiesStore.dispatch(addToCart(id));
 
+        if (!cart[id]) {
+            cart[id] = { id, count: 1 };
+        } else {
+            cart[id].count += 1;
+        }
 
-    if (!cart[id]) {
-        cart[id] = { id, count: 1 };
-    } else {
-        cart[id].count += 1;
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
 
     }
     
@@ -134,4 +136,13 @@ export class Goods extends Component{
     )
     return card;
     }
+    mount() {
+    // Сохраняем элемент после первого рендера
+    this.element = this.render();
+
+    // Подписываемся на изменения после того, как element установлен
+
+
+    return this.element;
+  }
 }
