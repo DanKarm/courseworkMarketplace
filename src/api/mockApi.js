@@ -23,6 +23,15 @@ const getGoods = async () => {
     return [];
   }
 };
+const getGoodsById = async (id) =>{
+  try {
+    const cities = await mockApi.get(`/goods/${id}`,);
+    return cities;
+  } catch (error) {
+    console.error("Error fetching favorite cities:", error);
+    return [];
+  }
+}
 
 const getUnFavoriteCities = async () => {
   try {
@@ -81,4 +90,5 @@ const deleteAll = async (cityIds) => {
 
 export {
   getGoods,
+  getGoodsById,
 };

@@ -5,10 +5,11 @@ import { Element } from "../lib/Element";
 export class GoodsSection extends Component{
     constructor(props){
         super(props)
-        this.goodList =  new GoodsList()
     }
     render(){
+        this.goodList =  new GoodsList()
         const goodsSection = new Element(
+          
             "section",
       {
         id: "goodes-cards",

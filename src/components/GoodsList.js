@@ -25,6 +25,7 @@ export class GoodsList extends Component{
 // }
     async loadGoods() {
             const goods = await getGoods();
+            console.log(goods)
             this.setState({ 
                 goods: goods,
                 isLoading: false 

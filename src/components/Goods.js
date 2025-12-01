@@ -4,12 +4,13 @@ import { Component } from "../lib/Component";
 export class Goods extends Component{
     constructor(props){
         super(props);
-    }
-    async loadGoods() {
-    const cities = await getUnFavoriteCities();
+        this.value = 0;
+        this.value = localStorage.getItem(this.props.id);
+        this.addToCart = this.addToCart.bind(this);
 
-    this.setState({ cities: cities, isLoading: false });
-  }
+        
+    }
+
     getDiscount(){
         const cardInfo = this.props;
         const {
@@ -18,6 +19,21 @@ export class Goods extends Component{
         } = cardInfo;
         const discountedPrice = price - (price * discount / 100);
         return Number(discountedPrice.toFixed(2));
+    }
+    addToCart(){
+    const { id } = this.props;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+
+    if (!cart[id]) {
+        cart[id] = { id, count: 1 };
+    } else {
+        cart[id].count += 1;
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
     }
     
     render(){
@@ -52,7 +68,7 @@ export class Goods extends Component{
                 )
             ),
             new Element(
-                "from",
+                "form",
                 {
                     class:"cards-main-form"
                 },
@@ -66,9 +82,11 @@ export class Goods extends Component{
                 new Element(
                     "button",
                     {
-                       type:"submit", 
+                       type:"button", 
                        class:"submit-button",
-                       textContent:"Add"
+                       textContent:"Add",
+                       onclick: this.addToCart,
+                       
                     }
                 )
             )

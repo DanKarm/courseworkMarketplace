@@ -5,6 +5,10 @@ export class Header extends Component{
     constructor(props){
         super(props)
     }
+    activeCart(){
+        const cart = document.getElementById("cart_wrapper");
+        cart.classList.add("active");
+    }
     render(){
         const HEADER = new Element(
             "header",
@@ -47,10 +51,11 @@ export class Header extends Component{
                     class:"header_cart-button",
                     type:"button",
                     textContent:"Cart",
+                    onclick: this.activeCart,
                 }
             )
         )
-      )
+      ),
         )
     return HEADER;
     }
