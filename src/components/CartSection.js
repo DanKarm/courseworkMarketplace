@@ -22,8 +22,8 @@ export class CartSection extends Component{
       new Element(
         "div",
         {
-            id: "container",
-            class: "container",
+            id: "wrap",
+            class: "wrap",
         },
         new Element(
             "button",

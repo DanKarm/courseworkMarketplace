@@ -2,6 +2,7 @@ import { Element } from "../lib/Element";
 import { Component } from "../lib/Component";
 import { citiesStore } from "../state/cartStore";
 import { addToCart } from "../state/cartStore";
+import { cartSection } from "../main";
 
 export class Goods extends Component{
     constructor(props){
@@ -33,8 +34,8 @@ export class Goods extends Component{
         } else {
             cart[id].count += 1;
         }
-
         localStorage.setItem("cart", JSON.stringify(cart));
+        cartSection.rerender();
 
     }
     

@@ -10,7 +10,7 @@ const APP = document.getElementById("app")
 const HEADER = new Header();
 const slider = new Slider();
 const goodsSection = new GoodsSection();
-const cart = new CartSection();
+const cartSection = new CartSection();
 
 
 
@@ -18,7 +18,7 @@ const cart = new CartSection();
 const fragment = document.createDocumentFragment();
 fragment.append(
   HEADER.mount(),
-  cart.mount(),
+  cartSection.mount(),
   slider.mount(),
   goodsSection.mount(),
 )
@@ -27,4 +27,7 @@ fragment.append(
 
 
 APP.append(fragment);
+export {
+  cartSection
+}
 initSlider();
