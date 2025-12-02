@@ -51,7 +51,7 @@ export class Slider extends Component{
                      new Element(
                         "span",
                         {
-                            textContent:"hello"
+                            textContent:"I am"
                         }
                     )
                 ),
@@ -69,7 +69,7 @@ export class Slider extends Component{
                     new Element(
                         "span",
                         {
-                            textContent:"hello"
+                            textContent:"Slider"
                         }
                     )
                 )

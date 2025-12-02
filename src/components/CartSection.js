@@ -1,17 +1,22 @@
 import { Component } from "../lib/Component";
-import { Cart } from "./Cart";
+import { CART }from "./Cart";
 import { Element } from "../lib/Element";
 
 export class CartSection extends Component{
     constructor(props){
         super(props)
+        this.cart = CART
     }
     disableCart(){
         const cart = document.getElementById("cart_wrapper");
         cart.classList.remove("active");
     }
+    deleteAll(){
+        localStorage.clear()
+        CART.loadGoods()
+    }
     render(){
-        this.cart =  new Cart()
+
         const goodsSection = new Element(
           
             "section",
@@ -32,6 +37,16 @@ export class CartSection extends Component{
                 class:"buttto_cart_exet",
                 textContent:"X",
                 onclick: this.disableCart,
+            }
+
+        ),
+        new Element(
+            "button",
+            {
+                type:"button",
+                class:"buttto_cart_delete-all",
+                textContent:"DALL",
+                onclick: this.deleteAll,
             }
 
         ),

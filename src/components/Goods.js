@@ -3,6 +3,7 @@ import { Component } from "../lib/Component";
 import { citiesStore } from "../state/cartStore";
 import { addToCart } from "../state/cartStore";
 import { cartSection } from "../main";
+import { CART } from "./Cart";
 
 export class Goods extends Component{
     constructor(props){
@@ -35,10 +36,12 @@ export class Goods extends Component{
             cart[id].count += 1;
         }
         localStorage.setItem("cart", JSON.stringify(cart));
-        cartSection.rerender();
+        CART.loadGoods();
 
     }
-    
+    remuveFromCart(){
+        
+    }
     render(){
     const cardInfo = this.props;
           const {
